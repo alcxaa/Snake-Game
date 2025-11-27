@@ -562,3 +562,83 @@ body {
 .score-animation {
   animation: scoreIncrease 0.3s ease;
 }
+
+/* === TIMER DISPLAY OVERLAY === */
+#snakeTimerDisplay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.55);
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-family: "Orbitron", monospace;
+  font-size: 1rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  z-index: 999; /* BIAR SELALU DI DEPAN */
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0,255,130,0.3);
+}
+
+/* === TIMER MENU (DALAM BOARD) === */
+#timerMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 260px;
+  background: rgba(15, 15, 25, 0.9);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(0,255,150,0.3);
+  z-index: 999;
+  text-align: center;
+}
+
+.timer-title {
+  font-family: "Orbitron", monospace;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.timer-select {
+  padding: 12px;
+  border-radius: 10px;
+  background: #0f0f16;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.15);
+  font-size: 1rem;
+}
+
+.timer-start-btn {
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  color: white;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s ease;
+  box-shadow: 0 0 20px rgba(0,255,150,0.3);
+}
+
+.timer-start-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0,255,150,0.5);
+}
+#snakeGrid {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: repeat(25, 1fr) / repeat(25, 1fr);
+    z-index: 1;
+}
