@@ -40,46 +40,63 @@
             </div>
         </header>
 
+ 
         <div class="game-wrapper">
-            <div class="game-container">
-                <button id="startBtn" class="start-button">
-                    <i class="fas fa-play"></i>
-                    <span>START GAME</span>
-                </button>
-                <div class="play-board"></div>
-                <div class="game-overlay"></div>
+<div class="game-container">
+
+       <!-- TIMER DISPLAY -->
+    <div id="snakeTimerDisplay">
+  Time: <span id="timeLeft">0</span>
+</div>
+
+    <!-- ARENA SNAKE DENGAN TIMER MENU DI DALAMNYA -->
+<div class="play-board" id="playBoard">
+
+    <!-- TIMER MENU -->
+    <div id="timerMenu">
+        <h2 class="timer-title">Pilih Timer</h2>
+        <select id="timerSelect" class="timer-select">
+            <option value="0">Free Mode</option>
+            <option value="60">1 Minute</option>
+            <option value="180">3 Minutes</option>
+            <option value="300">5 Minutes</option>
+        </select>
+        <button id="startTimerBtn" class="timer-start-btn">Mulai Game</button>
+    </div>
+
+</div>
+
+    <!-- CONTROL PANEL -->
+    <div class="controls-panel">
+        <div class="snake-customizer">
+            <h3><i class="fas fa-palette"></i> Customize Snake</h3>
+            <div class="color-picker-container">
+                <label for="snakeColorPicker">Snake Color</label>
+                <input type="color" id="snakeColorPicker" value="#00ff88">
             </div>
+        </div>
 
-            <div class="controls-panel">
-                <div class="snake-customizer">
-                    <h3><i class="fas fa-palette"></i> Customize Snake</h3>
-                    <div class="color-picker-container">
-                        <label for="snakeColorPicker">Snake Color</label>
-                        <input type="color" id="snakeColorPicker" value="#00ff88">
-                    </div>
-                </div>
-
-                <div class="mobile-controls">
-                    <div class="control-pad">
-                        <button data-key="ArrowUp" class="control-btn up">
-                            <i class="fas fa-chevron-up"></i>
-                        </button>
-                        <div class="horizontal-controls">
-                            <button data-key="ArrowLeft" class="control-btn left">
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
-                            <button data-key="ArrowDown" class="control-btn down">
-                                <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <button data-key="ArrowRight" class="control-btn right">
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-                        </div>
-                    </div>
+        <div class="mobile-controls">
+            <div class="control-pad">
+                <button data-key="ArrowUp" class="control-btn up">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+                <div class="horizontal-controls">
+                    <button data-key="ArrowLeft" class="control-btn left">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button data-key="ArrowDown" class="control-btn down">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <button data-key="ArrowRight" class="control-btn right">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+
+</div>
 
     <!-- Game Over Modal -->
     <div class="game-over-modal" id="gameOverModal">
@@ -88,7 +105,7 @@
             <div class="modal-icon">
                 <i class="fas fa-skull"></i>
             </div>
-            <h2>Game Over!</h2>
+            <h2>Time's Up!</h2>
             <p class="final-score">Your Score: <span id="finalScore">0</span></p>
             <div class="modal-buttons">
                 <button onclick="restartGame()" class="restart-btn">
